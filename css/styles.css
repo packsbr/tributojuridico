@@ -1,0 +1,848 @@
+/* ============================================================
+   TRIBUTO JURÍDICO — Folha de Estilos Principal
+   Edite este arquivo para personalizar cores, fontes e layout
+   ============================================================ */
+
+/* ---- RESET & BASE ---------------------------------------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: #0a0a0a;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---- VARIÁVEIS DE CORES ---------------------------------- */
+:root {
+  --ouro:      #c9a227;
+  --ouro-claro: #e8c84a;
+  --preto:     #000000;
+  --preto-soft: #0a0a0a;
+  --cinza-escuro: #1a1a1a;
+  --cinza-medio: #2a2a2a;
+  --cinza-texto: #aaa;
+  --branco:    #ffffff;
+  --verde-wpp: #25D366;
+  --verde-wpp-dark: #1ebe57;
+  --vermelho:  #8b0000;
+}
+
+/* ---- TIPOGRAFIA ------------------------------------------ */
+.titulo-serif {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.tag-label {
+  color: var(--ouro);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ---- BOTÕES ---------------------------------------------- */
+.btn-wpp {
+  background: linear-gradient(135deg, var(--verde-wpp), var(--verde-wpp-dark));
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-wpp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 35px rgba(37, 211, 102, 0.6);
+}
+
+.btn-wpp-lg {
+  padding: 20px 48px;
+  font-size: 20px;
+  box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+}
+
+.btn-outline-ouro {
+  border: 2px solid var(--ouro);
+  color: var(--ouro);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-ouro:hover {
+  background: var(--ouro);
+  color: #000;
+}
+
+/* ---- HEADER ---------------------------------------------- */
+#header {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+  border-bottom: 3px solid var(--ouro);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--ouro);
+  object-fit: cover;
+}
+
+.logo-nome {
+  color: var(--ouro);
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+}
+
+.logo-sub {
+  color: var(--cinza-texto);
+  font-size: 11px;
+  letter-spacing: 1px;
+  display: block;
+}
+
+/* ---- HERO ------------------------------------------------ */
+#hero {
+  background: linear-gradient(135deg, #000 0%, #111 40%, #1a0f00 100%);
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 30% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(201, 162, 39, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  background: linear-gradient(135deg, var(--ouro), var(--ouro-claro));
+  color: #000;
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 2px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.hero-h1 {
+  color: #fff;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  font-family: Georgia, serif;
+}
+
+.hero-h1 span {
+  color: var(--ouro);
+}
+
+.hero-h2 {
+  color: #ddd;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 400;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.hero-h2 span {
+  color: var(--ouro);
+  font-weight: 700;
+}
+
+.hero-desc {
+  color: #bbb;
+  font-size: 18px;
+  margin-bottom: 48px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-desc strong {
+  color: #fff;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---- ALERTA BANNER --------------------------------------- */
+#alerta {
+  background: linear-gradient(135deg, var(--ouro), var(--ouro-claro), var(--ouro));
+  padding: 18px 20px;
+  text-align: center;
+}
+
+#alerta p {
+  color: #000;
+  font-weight: 900;
+  font-size: clamp(13px, 2.5vw, 19px);
+  letter-spacing: 0.3px;
+}
+
+/* ---- SEÇÃO PROBLEMAS ------------------------------------- */
+#problemas {
+  background: #0d0d0d;
+  padding: 80px 20px;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-header h2 {
+  color: #fff;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 900;
+  font-family: Georgia, serif;
+  margin-bottom: 14px;
+}
+
+.section-header h2 span {
+  color: var(--ouro);
+}
+
+.section-header p {
+  color: #bbb;
+  font-size: 17px;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.problema-card {
+  background: linear-gradient(135deg, #1a1a1a, #222);
+  border: 1px solid #333;
+  border-left: 4px solid var(--ouro);
+  border-radius: 6px;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.problema-card:hover {
+  border-color: var(--ouro);
+  transform: translateX(4px);
+}
+
+.problema-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.problema-card p {
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.cta-center {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.cta-center .cta-text {
+  color: var(--ouro);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+/* ---- COMO FUNCIONA --------------------------------------- */
+#como-funciona {
+  background: linear-gradient(135deg, #111 0%, #1a1000 100%);
+  padding: 80px 20px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.step-card {
+  background: linear-gradient(135deg, #1a1a1a, #222);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.step-num {
+  background: linear-gradient(135deg, var(--ouro), var(--ouro-claro));
+  color: #000;
+  font-weight: 900;
+  font-size: 26px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-family: Georgia, serif;
+}
+
+.step-title {
+  color: var(--ouro);
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.step-desc {
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ---- LEI ------------------------------------------------- */
+#lei {
+  background: #050505;
+  padding: 80px 20px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.lei-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.lei-texto h2 {
+  color: #fff;
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 900;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+}
+
+.lei-texto h2 span {
+  color: var(--ouro);
+}
+
+.lei-texto p {
+  color: #bbb;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.direitos-titulo {
+  color: var(--ouro);
+  font-weight: 800;
+  font-size: 17px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.direito-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.direito-check {
+  background: linear-gradient(135deg, var(--ouro), var(--ouro-claro));
+  color: #000;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.direito-item p {
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ---- ADVOGADO -------------------------------------------- */
+#advogado {
+  background: linear-gradient(135deg, #0d0d0d, #1a1000);
+  padding: 80px 20px;
+}
+
+.advogado-grid {
+  max-width: 950px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 60px;
+  align-items: center;
+}
+
+.advogado-foto-wrap {
+  text-align: center;
+}
+
+.advogado-foto-circulo {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  border: 4px solid var(--ouro);
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(201, 162, 39, 0.3);
+}
+
+.advogado-foto-circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oab-badge {
+  background: linear-gradient(135deg, var(--ouro), var(--ouro-claro));
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 13px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.advogado-info h2 {
+  color: #fff;
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 900;
+  font-family: Georgia, serif;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.advogado-info h2 span {
+  color: var(--ouro);
+}
+
+.advogado-cidade {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.advogado-info p {
+  color: #bbb;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* ---- PARA QUEM É ----------------------------------------- */
+#para-quem {
+  background: #0a0a0a;
+  padding: 80px 20px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.perfil-card {
+  background: linear-gradient(135deg, #141414, #1e1e1e);
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.perfil-card:hover {
+  border-color: var(--ouro);
+  transform: translateY(-4px);
+}
+
+.perfil-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.perfil-title {
+  color: var(--ouro);
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.perfil-desc {
+  color: var(--cinza-texto);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ---- URGÊNCIA -------------------------------------------- */
+#urgencia {
+  background: linear-gradient(135deg, #6b0000, #c0392b, #6b0000);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.urgencia-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.urgencia-icone {
+  font-size: 52px;
+  margin-bottom: 16px;
+}
+
+#urgencia h2 {
+  color: #fff;
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 900;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+}
+
+#urgencia p {
+  color: #ffd;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+#urgencia strong {
+  color: #fff;
+}
+
+.btn-urgencia {
+  background: #fff;
+  color: var(--vermelho);
+  padding: 18px 40px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 17px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn-urgencia:hover {
+  transform: translateY(-2px);
+}
+
+/* ---- FAQ ------------------------------------------------- */
+#faq {
+  background: #0d0d0d;
+  padding: 80px 20px;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: linear-gradient(135deg, #141414, #1c1c1c);
+  border: 1px solid #2a2a2a;
+  border-left: 4px solid var(--ouro);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.faq-item:hover {
+  border-left-color: var(--ouro-claro);
+}
+
+.faq-pergunta {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq-seta {
+  color: var(--ouro);
+  font-size: 20px;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.aberto .faq-seta {
+  transform: rotate(180deg);
+}
+
+.faq-resposta {
+  color: var(--cinza-texto);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 14px;
+  display: none;
+}
+
+.faq-item.aberto .faq-resposta {
+  display: block;
+}
+
+/* ---- CTA FINAL ------------------------------------------- */
+#cta-final {
+  background: linear-gradient(135deg, #0a0a0a, #1a1000, #0a0a0a);
+  padding: 100px 20px;
+  text-align: center;
+  border-top: 3px solid var(--ouro);
+}
+
+.cta-final-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-final-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--ouro);
+  object-fit: cover;
+  margin-bottom: 32px;
+}
+
+#cta-final h2 {
+  color: #fff;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+}
+
+#cta-final h2 span {
+  color: var(--ouro);
+}
+
+.cta-final-desc {
+  color: #bbb;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.cta-final-sub {
+  color: #888;
+  font-size: 15px;
+  margin-bottom: 48px;
+}
+
+.cta-final-tel {
+  color: #555;
+  font-size: 14px;
+  margin-top: 20px;
+  display: block;
+}
+
+/* ---- RODAPÉ ---------------------------------------------- */
+#footer {
+  background: #000;
+  border-top: 2px solid #1a1a1a;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--ouro);
+  object-fit: cover;
+}
+
+.footer-logo-nome {
+  color: var(--ouro);
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: 2px;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+}
+
+.footer-oab {
+  color: #555;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.footer-aviso {
+  color: #444;
+  font-size: 12px;
+  max-width: 680px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.footer-copy {
+  color: #333;
+  font-size: 12px;
+}
+
+/* ---- BOTÃO FLUTUANTE WHATSAPP ---------------------------- */
+#wpp-flutuante {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: linear-gradient(135deg, var(--verde-wpp), var(--verde-wpp-dark));
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+  z-index: 9999;
+  animation: pulso 2s infinite;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ---- ÍCONE WHATSAPP (SVG inline) ------------------------- */
+.wpp-svg {
+  fill: white;
+}
+
+/* ---- RESPONSIVO ------------------------------------------ */
+@media (max-width: 600px) {
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-wpp, .btn-outline-ouro {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .advogado-grid,
+  .lei-grid {
+    gap: 40px;
+  }
+
+  #wpp-flutuante {
+    bottom: 18px;
+    right: 18px;
+    width: 56px;
+    height: 56px;
+  }
+}
